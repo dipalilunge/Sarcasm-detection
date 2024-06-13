@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcasm Detection</title>
+</head>
+<body>
+    <h1>Sarcasm Detection</h1>
+    
+    <form action="/predict" method="post">
+        <label for="text">Enter Text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+        
+        <label for="algorithm">Select Algorithm:</label>
+        <select id="algorithm" name="algorithm">
+            <option value="LSTM">LSTM</option>
+            <option value="BERT">BERT</option>
+            <option value="Random Forest">Random Forest</option>
+            <option value="Support Vector Machine">Support Vector Machine</option>
+            <option value="Decision Tree">Decision Tree</option>
+            <option value="Logistic Regression">Logistic Regression</option>
+        </select><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    
+    <br>
+    <h2>Prediction Result</h2>
+<table border="1">
+    <tr>
+        <th>Algorithm</th>
+        <th>Input Text</th>
+        <th>Prediction</th>
+        <th>Accuracy</th>
+    </tr>
+    <tr>
+        <td>{{ algorithm }}</td>
+        <td>{{ input_text }}</td>
+        <td>{{ result }}</td>
+        <td>{{ accuracy }}</td>
+    </tr>
+</table>
+
+    
+</body>
+</html>
